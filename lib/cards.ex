@@ -20,13 +20,22 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  @doc """
+    Determines wether a deck contains a given cards
+
+    ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+  """
   def contains?(deck, hand) do
     Enum.member?(deck, hand)
   end
 
   @doc """
     divides a deck into a hand and the reminder of the deck. The `hand size` determines how many cards.
-    The doc test below, using the ## Examples stuff, also works as a test, when in the elixir console you
+    The doc test below, using the `examples stuff`, also works as a test, when in the elixir console you
     run mix test, it also run the doctest, so, if you change the hand to be Ace of Spad, it will fail.
 
     ## Examples
